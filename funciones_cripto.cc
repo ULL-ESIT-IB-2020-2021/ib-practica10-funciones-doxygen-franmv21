@@ -45,7 +45,7 @@ void Usage(int argc, char* argv[]){
 }    
 
 string XOR(string texto) {
-    char clave = 'F';                   //Solo funciona con letras mayúsculas y no usa la clave introducida por línea de comandos.
+    char clave = 'F';                   ///Solo funciona con letras mayúsculas y no usa la clave introducida por línea de comandos.
     string salida = texto;
     
     for (int i = 0; i < salida.size(); i++)
