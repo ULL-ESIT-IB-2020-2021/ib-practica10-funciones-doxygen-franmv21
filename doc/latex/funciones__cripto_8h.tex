@@ -1,0 +1,173 @@
+\hypertarget{funciones__cripto_8h}{}\subsection{funciones\+\_\+cripto.\+h File Reference}
+\label{funciones__cripto_8h}\index{funciones\+\_\+cripto.\+h@{funciones\+\_\+cripto.\+h}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for funciones\+\_\+cripto.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{funciones__cripto_8h_aeac332c082069f54e8769d311dd2049d}{Usage} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Universidad de La Laguna Escuela Superior de Ingeniería y Tecnología Grado en Ingeniería Informática Informática Básica. \end{DoxyCompactList}\item 
+string \hyperlink{funciones__cripto_8h_a843363d2050163285aa7d86242fdd9ca}{X\+OR} (string texto)
+\item 
+string \hyperlink{funciones__cripto_8h_a07cd9b5fa9e1ee2fae11d8b01e049064}{Cesar\+Encriptar} (string texto, int clave)
+\item 
+string \hyperlink{funciones__cripto_8h_ad303021775f878802590ec4603a33a44}{Cesar\+Desencriptar} (string texto, int clave)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\mbox{\Hypertarget{funciones__cripto_8h_ad303021775f878802590ec4603a33a44}\label{funciones__cripto_8h_ad303021775f878802590ec4603a33a44}} 
+\index{funciones\+\_\+cripto.\+h@{funciones\+\_\+cripto.\+h}!Cesar\+Desencriptar@{Cesar\+Desencriptar}}
+\index{Cesar\+Desencriptar@{Cesar\+Desencriptar}!funciones\+\_\+cripto.\+h@{funciones\+\_\+cripto.\+h}}
+\paragraph{\texorpdfstring{Cesar\+Desencriptar()}{CesarDesencriptar()}}
+{\footnotesize\ttfamily string Cesar\+Desencriptar (\begin{DoxyParamCaption}\item[{string}]{texto,  }\item[{int}]{clave }\end{DoxyParamCaption})}
+
+
+
+Definition at line 70 of file funciones\+\_\+cripto.\+cc.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+70                                                  \{
+71   \textcolor{keywordtype}{string} resultado = \textcolor{stringliteral}{""};
+72   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i <texto.length(); i++)\{
+73     \textcolor{keywordflow}{if}(isalpha(texto[i]))\{
+74       \textcolor{keywordflow}{if}(isupper(texto[i]))\{
+75       resultado = resultado + char((\textcolor{keywordtype}{int}(texto[i]- clave - \textcolor{charliteral}{'A'}) % 26) + \textcolor{charliteral}{'A'});
+76     \} \textcolor{keywordflow}{else} \{
+77       resultado = resultado + char((\textcolor{keywordtype}{int}(texto[i]- clave - \textcolor{charliteral}{'a'}) % 26) + \textcolor{charliteral}{'a'});
+78       \}
+79     \} 
+80   \} 
+81   \textcolor{keywordflow}{return} resultado;
+82 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{funciones__cripto_8h_a07cd9b5fa9e1ee2fae11d8b01e049064}\label{funciones__cripto_8h_a07cd9b5fa9e1ee2fae11d8b01e049064}} 
+\index{funciones\+\_\+cripto.\+h@{funciones\+\_\+cripto.\+h}!Cesar\+Encriptar@{Cesar\+Encriptar}}
+\index{Cesar\+Encriptar@{Cesar\+Encriptar}!funciones\+\_\+cripto.\+h@{funciones\+\_\+cripto.\+h}}
+\paragraph{\texorpdfstring{Cesar\+Encriptar()}{CesarEncriptar()}}
+{\footnotesize\ttfamily string Cesar\+Encriptar (\begin{DoxyParamCaption}\item[{string}]{texto,  }\item[{int}]{clave }\end{DoxyParamCaption})}
+
+
+
+Definition at line 56 of file funciones\+\_\+cripto.\+cc.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+56                                               \{
+57   \textcolor{keywordtype}{string} resultado = \textcolor{stringliteral}{""};
+58   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i <texto.length(); i++)\{  
+59       \textcolor{keywordflow}{if}(isalpha(texto[i]))\{
+60         \textcolor{keywordflow}{if}(isupper(texto[i]))\{
+61           resultado = resultado + char((\textcolor{keywordtype}{int}(texto[i]+ clave - \textcolor{charliteral}{'A'}) % 26) + \textcolor{charliteral}{'A'});
+62         \}   \textcolor{keywordflow}{else} \{
+63           resultado = resultado + char((\textcolor{keywordtype}{int}(texto[i]+ clave - \textcolor{charliteral}{'a'}) % 26) + \textcolor{charliteral}{'a'});
+64             \}
+65       \}
+66   \}
+67   \textcolor{keywordflow}{return} resultado;
+68 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{funciones__cripto_8h_aeac332c082069f54e8769d311dd2049d}\label{funciones__cripto_8h_aeac332c082069f54e8769d311dd2049d}} 
+\index{funciones\+\_\+cripto.\+h@{funciones\+\_\+cripto.\+h}!Usage@{Usage}}
+\index{Usage@{Usage}!funciones\+\_\+cripto.\+h@{funciones\+\_\+cripto.\+h}}
+\paragraph{\texorpdfstring{Usage()}{Usage()}}
+{\footnotesize\ttfamily void Usage (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Universidad de La Laguna Escuela Superior de Ingeniería y Tecnología Grado en Ingeniería Informática Informática Básica. 
+
+\begin{DoxyAuthor}{Author}
+F. de Sande 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+7.\+nov.\+2020 Cada nuevo término de la serie de Fibonacci se genera sumando los dos anteriores. Comenzando con 0 y 1, los primeros 10 términos serán\+: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 Desarrolle en C++ un programa que calcule la suma de todos los términos de valor par de la serie que sean menores que 1000. 
+\end{DoxyDate}
+\begin{DoxySeeAlso}{See also}
+\href{https://docs.google.com/document/d/1-3hTIVf8tPrbn9u0vs0Cm2IGyX1XBgv8hReVU0KOSUQ/edit?usp=sharing}{\tt https\+://docs.\+google.\+com/document/d/1-\/3h\+T\+I\+Vf8t\+Prbn9u0vs0\+Cm2\+I\+Gy\+X1\+X\+Bgv8h\+Re\+V\+U0\+K\+O\+S\+U\+Q/edit?usp=sharing} 
+
+stoi \href{http://www.cplusplus.com/reference/string/stoi/}{\tt http\+://www.\+cplusplus.\+com/reference/string/stoi/} An Object Oriented Version of the program\+: 
+
+\href{https://stackoverflow.com/questions/21360694/sum-of-even-fibonacci-numbers-under-1000Muestra}{\tt https\+://stackoverflow.\+com/questions/21360694/sum-\/of-\/even-\/fibonacci-\/numbers-\/under-\/1000\+Muestra} el modo de uso correcto del programa En caso de que el uso no sea el correcto, muestra el mensaje y finaliza la ejecución del programa. El programa precisa un único número natural para su ejecución.
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em argc} & Number of command line parameters \\
+\hline
+\mbox{\tt in}  & {\em argv} & Vector containing (char$\ast$) the parameters \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 33 of file fibonacci\+\_\+sum.\+cc.
+
+
+
+References k\+Help\+Text.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+33                                    \{
+34   \textcolor{keywordflow}{if} (argc != 2) \{
+35     std::cout << argv[0] << \textcolor{stringliteral}{": Falta un número natural como parámetro"} << std::endl;
+36     std::cout << \textcolor{stringliteral}{"Pruebe "} << argv[0] << \textcolor{stringliteral}{" --help para más información"} << std::endl;
+37     exit(EXIT\_SUCCESS);
+38   \}
+39   std::string parameter\{argv[1]\};
+40   \textcolor{keywordflow}{if} (parameter == \textcolor{stringliteral}{"--help"}) \{
+41     std::cout << \hyperlink{fibonacci__sum_8h_a08728caac9a53278aea6a3218ae1dfeb}{kHelpText} << std::endl;
+42     exit(EXIT\_SUCCESS);
+43   \}
+44 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{funciones__cripto_8h_a843363d2050163285aa7d86242fdd9ca}\label{funciones__cripto_8h_a843363d2050163285aa7d86242fdd9ca}} 
+\index{funciones\+\_\+cripto.\+h@{funciones\+\_\+cripto.\+h}!X\+OR@{X\+OR}}
+\index{X\+OR@{X\+OR}!funciones\+\_\+cripto.\+h@{funciones\+\_\+cripto.\+h}}
+\paragraph{\texorpdfstring{X\+O\+R()}{XOR()}}
+{\footnotesize\ttfamily string X\+OR (\begin{DoxyParamCaption}\item[{string}]{texto }\end{DoxyParamCaption})}
+
+
+
+Definition at line 47 of file funciones\+\_\+cripto.\+cc.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+47                          \{
+48     \textcolor{keywordtype}{char} clave = \textcolor{charliteral}{'F'};                   \textcolor{comment}{//Solo funciona con letras mayúsculas y no usa la clave introducida
+       por línea de comandos.}
+49     \textcolor{keywordtype}{string} salida = texto;
+50     
+51     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < salida.size(); i++)
+52         salida[i] = salida[i] ^ clave;
+53     \textcolor{keywordflow}{return} salida;
+54 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 5

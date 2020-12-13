@@ -1,0 +1,181 @@
+\hypertarget{funciones__cripto_8cc}{}\subsection{funciones\+\_\+cripto.\+cc File Reference}
+\label{funciones__cripto_8cc}\index{funciones\+\_\+cripto.\+cc@{funciones\+\_\+cripto.\+cc}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include \char`\"{}funciones\+\_\+cripto.\+h\char`\"{}}\newline
+Include dependency graph for funciones\+\_\+cripto.\+cc\+:
+% FIG 0
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{funciones__cripto_8cc_aeac332c082069f54e8769d311dd2049d}{Usage} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Universidad de La Laguna Escuela Superior de Ingeniería y Tecnología Grado en Ingeniería Informática Informática Básica. \end{DoxyCompactList}\item 
+string \hyperlink{funciones__cripto_8cc_a843363d2050163285aa7d86242fdd9ca}{X\+OR} (string texto)
+\item 
+string \hyperlink{funciones__cripto_8cc_a07cd9b5fa9e1ee2fae11d8b01e049064}{Cesar\+Encriptar} (string texto, int clave)
+\item 
+string \hyperlink{funciones__cripto_8cc_ad303021775f878802590ec4603a33a44}{Cesar\+Desencriptar} (string texto, int clave)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\mbox{\Hypertarget{funciones__cripto_8cc_ad303021775f878802590ec4603a33a44}\label{funciones__cripto_8cc_ad303021775f878802590ec4603a33a44}} 
+\index{funciones\+\_\+cripto.\+cc@{funciones\+\_\+cripto.\+cc}!Cesar\+Desencriptar@{Cesar\+Desencriptar}}
+\index{Cesar\+Desencriptar@{Cesar\+Desencriptar}!funciones\+\_\+cripto.\+cc@{funciones\+\_\+cripto.\+cc}}
+\paragraph{\texorpdfstring{Cesar\+Desencriptar()}{CesarDesencriptar()}}
+{\footnotesize\ttfamily string Cesar\+Desencriptar (\begin{DoxyParamCaption}\item[{string}]{texto,  }\item[{int}]{clave }\end{DoxyParamCaption})}
+
+
+
+Definition at line 70 of file funciones\+\_\+cripto.\+cc.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+70                                                  \{
+71   \textcolor{keywordtype}{string} resultado = \textcolor{stringliteral}{""};
+72   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i <texto.length(); i++)\{
+73     \textcolor{keywordflow}{if}(isalpha(texto[i]))\{
+74       \textcolor{keywordflow}{if}(isupper(texto[i]))\{
+75       resultado = resultado + char((\textcolor{keywordtype}{int}(texto[i]- clave - \textcolor{charliteral}{'A'}) % 26) + \textcolor{charliteral}{'A'});
+76     \} \textcolor{keywordflow}{else} \{
+77       resultado = resultado + char((\textcolor{keywordtype}{int}(texto[i]- clave - \textcolor{charliteral}{'a'}) % 26) + \textcolor{charliteral}{'a'});
+78       \}
+79     \} 
+80   \} 
+81   \textcolor{keywordflow}{return} resultado;
+82 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{funciones__cripto_8cc_a07cd9b5fa9e1ee2fae11d8b01e049064}\label{funciones__cripto_8cc_a07cd9b5fa9e1ee2fae11d8b01e049064}} 
+\index{funciones\+\_\+cripto.\+cc@{funciones\+\_\+cripto.\+cc}!Cesar\+Encriptar@{Cesar\+Encriptar}}
+\index{Cesar\+Encriptar@{Cesar\+Encriptar}!funciones\+\_\+cripto.\+cc@{funciones\+\_\+cripto.\+cc}}
+\paragraph{\texorpdfstring{Cesar\+Encriptar()}{CesarEncriptar()}}
+{\footnotesize\ttfamily string Cesar\+Encriptar (\begin{DoxyParamCaption}\item[{string}]{texto,  }\item[{int}]{clave }\end{DoxyParamCaption})}
+
+
+
+Definition at line 56 of file funciones\+\_\+cripto.\+cc.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+56                                               \{
+57   \textcolor{keywordtype}{string} resultado = \textcolor{stringliteral}{""};
+58   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i <texto.length(); i++)\{  
+59       \textcolor{keywordflow}{if}(isalpha(texto[i]))\{
+60         \textcolor{keywordflow}{if}(isupper(texto[i]))\{
+61           resultado = resultado + char((\textcolor{keywordtype}{int}(texto[i]+ clave - \textcolor{charliteral}{'A'}) % 26) + \textcolor{charliteral}{'A'});
+62         \}   \textcolor{keywordflow}{else} \{
+63           resultado = resultado + char((\textcolor{keywordtype}{int}(texto[i]+ clave - \textcolor{charliteral}{'a'}) % 26) + \textcolor{charliteral}{'a'});
+64             \}
+65       \}
+66   \}
+67   \textcolor{keywordflow}{return} resultado;
+68 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{funciones__cripto_8cc_aeac332c082069f54e8769d311dd2049d}\label{funciones__cripto_8cc_aeac332c082069f54e8769d311dd2049d}} 
+\index{funciones\+\_\+cripto.\+cc@{funciones\+\_\+cripto.\+cc}!Usage@{Usage}}
+\index{Usage@{Usage}!funciones\+\_\+cripto.\+cc@{funciones\+\_\+cripto.\+cc}}
+\paragraph{\texorpdfstring{Usage()}{Usage()}}
+{\footnotesize\ttfamily void Usage (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Universidad de La Laguna Escuela Superior de Ingeniería y Tecnología Grado en Ingeniería Informática Informática Básica. 
+
+\begin{DoxyAuthor}{Author}
+F. de Sande 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+7.\+nov.\+2020 Cada nuevo término de la serie de Fibonacci se genera sumando los dos anteriores. Comenzando con 0 y 1, los primeros 10 términos serán\+: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 Desarrolle en C++ un programa que calcule la suma de todos los términos de valor par de la serie que sean menores que 1000. 
+\end{DoxyDate}
+\begin{DoxySeeAlso}{See also}
+\href{https://docs.google.com/document/d/1-3hTIVf8tPrbn9u0vs0Cm2IGyX1XBgv8hReVU0KOSUQ/edit?usp=sharing}{\tt https\+://docs.\+google.\+com/document/d/1-\/3h\+T\+I\+Vf8t\+Prbn9u0vs0\+Cm2\+I\+Gy\+X1\+X\+Bgv8h\+Re\+V\+U0\+K\+O\+S\+U\+Q/edit?usp=sharing} 
+
+stoi \href{http://www.cplusplus.com/reference/string/stoi/}{\tt http\+://www.\+cplusplus.\+com/reference/string/stoi/} An Object Oriented Version of the program\+: 
+
+\href{https://stackoverflow.com/questions/21360694/sum-of-even-fibonacci-numbers-under-1000Muestra}{\tt https\+://stackoverflow.\+com/questions/21360694/sum-\/of-\/even-\/fibonacci-\/numbers-\/under-\/1000\+Muestra} el modo de uso correcto del programa En caso de que el uso no sea el correcto, muestra el mensaje y finaliza la ejecución del programa. El programa precisa un único número natural para su ejecución.
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em argc} & Number of command line parameters \\
+\hline
+\mbox{\tt in}  & {\em argv} & Vector containing (char$\ast$) the parameters \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 23 of file funciones\+\_\+cripto.\+cc.
+
+
+
+References k\+Help\+Text.
+
+
+\begin{DoxyCode}
+23                                   \{
+24   \textcolor{keywordflow}{if}(argc <= 1)\{
+25     cout << argv[0] << \textcolor{stringliteral}{" -- Cifrado de ficheros"} << endl;
+26     cout << \textcolor{stringliteral}{"Modo de uso: "} << argv[0] << \textcolor{stringliteral}{" fichero\_entrada fichero\_salida método password operación"} << 
+      endl;
+27     cout << \textcolor{stringliteral}{"Pruebe "} << argv[0] << \textcolor{stringliteral}{" --help para más información"} << endl;
+28     exit(EXIT\_SUCCESS);
+29   \}
+30   \textcolor{keywordtype}{string} parametro\{argv[1]\};
+31   \textcolor{keywordflow}{if}(parametro == \textcolor{stringliteral}{"--help"})\{
+32     cout << argv[0] << \textcolor{stringliteral}{" -- Cifrado de ficheros"} << endl;
+33     cout << \textcolor{stringliteral}{"Modo de uso: "} << argv[0] << \textcolor{stringliteral}{" fichero\_entrada fichero\_salida método password operación"} << 
+      endl << endl;
+34     cout << \textcolor{stringliteral}{"fichero\_entrada: Fichero a codificar"} << endl;
+35     cout << \textcolor{stringliteral}{"fichero\_salida:  Fichero codificaco"} << endl;
+36     cout << \textcolor{stringliteral}{"método:          Indica el método de encriptado"} << endl;
+37     cout << \textcolor{stringliteral}{"                   1: Cifrado XOR"} << endl;
+38     cout << \textcolor{stringliteral}{"                   2: Cifrado César"} << endl;
+39     cout << \textcolor{stringliteral}{"password:        Letra (mayúscula) secreta en el caso del método 1, Valor de K en el método 2"}
+       << endl;
+40     cout << \textcolor{stringliteral}{"operación:       Operación a realizar en el fichero"} << endl;
+41     cout << \textcolor{stringliteral}{"                   +: encriptar el fichero"} << endl;
+42     cout << \textcolor{stringliteral}{"                   -: desencariptar el fichero"} << endl;
+43     exit(EXIT\_SUCCESS);
+44   \}
+45 \}    
+\end{DoxyCode}
+\mbox{\Hypertarget{funciones__cripto_8cc_a843363d2050163285aa7d86242fdd9ca}\label{funciones__cripto_8cc_a843363d2050163285aa7d86242fdd9ca}} 
+\index{funciones\+\_\+cripto.\+cc@{funciones\+\_\+cripto.\+cc}!X\+OR@{X\+OR}}
+\index{X\+OR@{X\+OR}!funciones\+\_\+cripto.\+cc@{funciones\+\_\+cripto.\+cc}}
+\paragraph{\texorpdfstring{X\+O\+R()}{XOR()}}
+{\footnotesize\ttfamily string X\+OR (\begin{DoxyParamCaption}\item[{string}]{texto }\end{DoxyParamCaption})}
+
+
+
+Definition at line 47 of file funciones\+\_\+cripto.\+cc.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+47                          \{
+48     \textcolor{keywordtype}{char} clave = \textcolor{charliteral}{'F'};                   \textcolor{comment}{//Solo funciona con letras mayúsculas y no usa la clave introducida
+       por línea de comandos.}
+49     \textcolor{keywordtype}{string} salida = texto;
+50     
+51     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < salida.size(); i++)
+52         salida[i] = salida[i] ^ clave;
+53     \textcolor{keywordflow}{return} salida;
+54 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 3
