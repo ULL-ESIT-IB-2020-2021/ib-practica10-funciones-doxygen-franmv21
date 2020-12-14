@@ -1,0 +1,9 @@
+void lineas(string texto){
+    int c = 0;
+    for(int i = 0; texto.length(); i++){
+      if(texto[i] == '.'){
+        ++c;
+        cout << "Hay: " << c << " frases." << endl;
+      } 
+    }
+}
